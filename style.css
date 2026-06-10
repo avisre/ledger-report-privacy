@@ -1,0 +1,217 @@
+/* The Ledger Report — support site */
+
+:root {
+  --teal-deep: #0B1416;
+  --teal: #101D20;
+  --teal-panel: #14252A;
+  --gold: #E5B954;
+  --gold-dim: #C89B3C;
+  --parchment: #F2E7CE;
+  --parchment-edge: #D9C9A3;
+  --ink: #2B2114;
+  --ink-soft: #564731;
+  --muted: #A89B7C;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--teal-deep);
+  background-image: radial-gradient(ellipse at 50% -10%, #16282C 0%, var(--teal-deep) 60%);
+  color: #EDE3CC;
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1.65;
+}
+
+.wrap {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 40px 20px 64px;
+}
+
+/* ---- Header ---- */
+
+header.site {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.brand {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.brand .title {
+  color: var(--gold);
+  font-size: 1.9em;
+  letter-spacing: 2px;
+  font-variant: small-caps;
+}
+
+.brand .rule {
+  width: 180px;
+  height: 1px;
+  margin: 10px auto;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+
+.brand .tagline {
+  color: var(--muted);
+  font-size: 0.85em;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+nav.tabs {
+  margin-top: 26px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+nav.tabs a {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  padding: 8px 18px;
+  border: 1px solid #2C3E3A;
+  border-radius: 999px;
+  background: var(--teal-panel);
+  transition: border-color 0.15s, color 0.15s;
+}
+
+nav.tabs a:hover {
+  border-color: var(--gold-dim);
+}
+
+nav.tabs a.active {
+  background: var(--gold-dim);
+  border-color: var(--gold-dim);
+  color: var(--teal-deep);
+  font-weight: bold;
+}
+
+/* ---- Page heading (on the dark scaffold) ---- */
+
+h1 {
+  color: var(--gold);
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0 0 6px;
+  font-size: 1.7em;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.88em;
+  text-align: center;
+  margin: 0 0 28px;
+}
+
+/* ---- Parchment content panel ---- */
+
+main.panel {
+  background: var(--parchment);
+  color: var(--ink);
+  border: 1px solid var(--parchment-edge);
+  outline: 1px solid var(--gold-dim);
+  outline-offset: 4px;
+  border-radius: 3px;
+  padding: 36px 40px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+}
+
+main.panel h2 {
+  color: #7A5A18;
+  font-weight: normal;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  font-size: 1.25em;
+  margin: 34px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--parchment-edge);
+}
+
+main.panel h2:first-child { margin-top: 0; }
+
+main.panel a { color: #8A6512; }
+
+main.panel li { margin: 7px 0; }
+
+main.panel strong { color: var(--ink); }
+
+main.panel code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.92em;
+  background: #E8DABA;
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+main.panel ol li, main.panel ul li { color: var(--ink-soft); }
+main.panel p { color: var(--ink-soft); }
+
+.callout {
+  background: #EADDBC;
+  border-left: 3px solid var(--gold-dim);
+  padding: 14px 18px;
+  margin: 18px 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.callout p { margin: 0; }
+
+/* ---- Cross-link cards ---- */
+
+.cards {
+  display: flex;
+  gap: 14px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.cards a {
+  flex: 1 1 220px;
+  display: block;
+  text-decoration: none;
+  background: #EADDBC;
+  border: 1px solid var(--parchment-edge);
+  border-radius: 3px;
+  padding: 16px 18px;
+  transition: border-color 0.15s;
+}
+
+.cards a:hover { border-color: var(--gold-dim); }
+
+.cards .card-title {
+  color: #7A5A18;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  font-size: 1.05em;
+}
+
+.cards .card-sub {
+  color: var(--ink-soft);
+  font-size: 0.88em;
+  margin-top: 4px;
+}
+
+/* ---- Footer ---- */
+
+footer.site {
+  margin-top: 36px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.82em;
+}
+
+footer.site a { color: var(--gold-dim); }
+
+@media (max-width: 540px) {
+  main.panel { padding: 26px 20px; }
+  .wrap { padding-top: 28px; }
+}
